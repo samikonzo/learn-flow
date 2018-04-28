@@ -1,13 +1,17 @@
 /* @flow */
 
 import React from 'react'
+import './App.less'
 
-class App extends React.Component{
+const l = console.log
+
+type Props = {};
+
+class App extends React.Component<Props>{
 	render(){
 		return(
 			<div> 
-				<Test num={2}/>
-				<Test num={"2"}/>
+				<Test num={34}/>
 			</div>
 		)
 	}
@@ -15,8 +19,18 @@ class App extends React.Component{
 
 
 let Test = (props) => {
+
+	let num: number = props.num || 22
+
+	function square(n: number, s?: string): (number | string | void) {
+		if(n > 20) return n
+		return s
+	}
+
+	l(square(10, 'bebebe'))
+
 	return (
-		<div>{props.num}</div>
+		<div>{num}</div>
 	)
 }
 

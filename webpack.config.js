@@ -1,5 +1,6 @@
 const webpack = require('webpack')
 const path = require('path')
+const FlowWebpackPlugin = require('flow-webpack-plugin')
 
 let rules = {
 	jsx : {
@@ -33,4 +34,7 @@ module.exports = {
 	module:{
 		rules: [rules.jsx, rules.less]
 	}, 
+	plugins:[
+		new FlowWebpackPlugin(),
+	]
 }
